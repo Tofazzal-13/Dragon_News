@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import userAvatar from "@/assets/user.png"
+import NavLink from './NavLink';
 
 
 const Navbar = () => {
@@ -15,13 +16,13 @@ const Navbar = () => {
             <div  className='mx-auto'>
                 <ul className='flex justify-between items-center gap-3 text-gray-600'>
                     <li>
-                        <Link href={"/"}>Home</Link>
+                        <NavLink href={"/"}>Home</NavLink>
                     </li>
                     <li>
-                        <Link href={"/aboutUs"}>About</Link>
+                        <NavLink href={"/aboutUs"}>About</NavLink>
                     </li>
                     <li>
-                        <Link href={"/career"}>Career</Link>
+                        <NavLink href={"/career"}>Career</NavLink>
                     </li>
                 
                 </ul>
