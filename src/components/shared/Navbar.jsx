@@ -33,7 +33,7 @@ const Navbar = () => {
                 <Image 
                 src={userAvatar}
                  alt='user avator'
-                 width={40}
+                 width={60}
                  height={40}
                  ></Image>
                  <button className='btn btn-primary'> 
