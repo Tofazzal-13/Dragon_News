@@ -1,4 +1,6 @@
 import LeftSidebar from "@/components/homepage/news/LeftSidebar";
+import RightSidebar from "@/components/homepage/news/RightSidebar";
+
 
 const getCategories = async () => {
   const res = await fetch("https://openapi.programming-hero.com/api/news/categories")
@@ -16,15 +18,15 @@ export default async function Home() {
 
       {/* leftsidebar  */}
       <div className="col-span-3  ">
-        <LeftSidebar categories={categories} activeId={"05"}></LeftSidebar>
+        <LeftSidebar categories={categories} activeId={null}></LeftSidebar>
       </div>
 
 
       <div className="col-span-6 font-bold text-3xl bg-purple-300">
         All news
       </div>
-      <div className="col-span-3 font-bold text-3xl bg-yellow-400">
-        social icon
+      <div className="col-span-3  ">
+        <RightSidebar></RightSidebar>
       </div>
     </div>
   );
