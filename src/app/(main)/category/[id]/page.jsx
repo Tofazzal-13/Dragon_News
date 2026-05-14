@@ -1,17 +1,8 @@
 import LeftSidebar from '@/components/homepage/news/LeftSidebar';
 import RightSidebar from '@/components/homepage/news/RightSidebar';
+import { getCategories, getNewsByCategoriesId } from '@/lib/data';
 import React from 'react';
 
-const getCategories = async () => {
-    const res = await fetch("https://openapi.programming-hero.com/api/news/categories")
-    const data = await res.json()
-    return data.data;
-}
-const getNewsByCategoriesId = async (category_id) => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${category_id}`)
-    const data = await res.json()
-    return data.data;
-}
 
 const NewsCategoryPage = async ({ params }) => {
     const { id } = await params;
@@ -27,9 +18,9 @@ const NewsCategoryPage = async ({ params }) => {
             </div>
 
 
-            <div className="col-span-6   bg-purple-300">
-                All news
-                <div className="space-y-2">
+            <div className="col-span-6 ">
+                <h2>New by category</h2>
+                <div className="space-y-2 mt-6">
                     {
                         news.length > 0 ? news.map(n => {
                             return <div className="border p-4 m-2 rounded-xl" key={n._id}>
